@@ -42,7 +42,7 @@ jobs:
 
       - name: Run Postman Collection Tests
         run: |
-          newman run tests/postman_collection.json
+          newman run tests/Flask API Test.postman_collection.json --reporter-cli
 
       - name: Upload Test Report
         uses: actions/upload-artifact@v3
