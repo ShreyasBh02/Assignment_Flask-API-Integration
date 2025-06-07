@@ -38,7 +38,7 @@ jobs:
 
       - name: Install Newman CLI
         run: |
-          np, install -g newman
+          npm install -g newman
 
       - name: Run Postman Collection Tests
         run: |
