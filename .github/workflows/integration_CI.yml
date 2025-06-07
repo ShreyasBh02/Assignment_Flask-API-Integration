@@ -42,7 +42,7 @@ jobs:
 
       - name: Run Postman Collection Tests
         run: |
-          newman run tests/Flask\ API\ Test.postman_collection.json --reporter-cli --reporter-json --reporter-json-export newman-report.json
+          newman run tests/Flask\ API\ Test.postman_collection.json --reporter-cli
 
       - name: Upload Test Report
         if: always()
@@ -50,3 +50,4 @@ jobs:
         with:
           name: newman-report
           path: newman-report.json
+
