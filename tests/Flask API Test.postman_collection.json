@@ -27,12 +27,8 @@
 				"header": [],
 				"url": {
 					"raw": "{{base_url}}/info?id=1",
-					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"info"
-					],
+					"host": ["{{base_url}}"],
+					"path": ["info"],
 					"query": [
 						{
 							"key": "id",
@@ -75,45 +71,20 @@
 					}
 				},
 				"url": {
-					"raw": "/api/add",
-					"path": [
-						"api",
-						"add"
-					]
-				},
+					  "raw": "{{base_url}}/api/add",
+    			     "host": ["{{base_url}}"],
+					 "path": ["api", "add"]
+					},
 				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
 			},
 			"response": []
 		}
 	],
-	"event": [
-		{
-			"listen": "prerequest",
-			"script": {
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		},
-		{
-			"listen": "test",
-			"script": {
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		}
-	],
-	"variable": [
-		{
-			"key": "id",
-			"value": "1"
-		},
-		{
+		 "event": [],
+		"variable": [
+			{
 			"key": "base_url",
-			"value": "https://postman-rest-api-learner.glitch.me/"
-		}
+			"value": "http://127.0.0.1:5000"
+			}
 	]
 }
