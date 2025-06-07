@@ -34,7 +34,11 @@ jobs:
       - name: Start Flask App in Background
         run: |
           nohup python app.py > flask.log 2>&1 &
-          sleep 5
+          sleep 10
+
+      - name: Check if Flask is Running
+        run: |
+          curl http://127.0.0.1:5000/info?id=1 || (echo "Flask app failed to start!" && cat flask.log && exit 1)
 
       - name: Install Newman CLI
         run: |
