@@ -33,7 +33,7 @@ jobs:
 
       - name: Start Flask App in Background
         run: |
-          nohup python app.py &
+          nohup python app.py > flask.log 2>&1 &
           sleep 5
 
       - name: Install Newman CLI
@@ -42,12 +42,11 @@ jobs:
 
       - name: Run Postman Collection Tests
         run: |
-          newman run tests/Flask\ API\ Test.postman_collection.json --reporter-cli
+          newman run tests/Flask\ API\ Test.postman_collection.json --reporters cli,junit --reporter-junit-export newman-report.xml
 
       - name: Upload Test Report
-        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: newman-report
-          path: newman-report.json
+          path: newman-report.xml
 
